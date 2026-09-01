@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Self-Evaluation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">HCST</div>
+      <div>
+        <div class="college-name" id="collegeName">Hindustan College of Science & Technology</div>
+        <div class="department" id="departmentName">Department of Information Technology</div>
+      </div>
+    </div>
+    <div class="header-badge" id="subjectBadge">Self Evaluation</div>
+  </header>
+
+  <main class="container">
+    <div id="alert" class="alert hidden"></div>
+
+    <!-- SCREEN 1 -->
+    <section id="screen-details" class="screen active">
+      <div class="hero-card">
+        <div class="hero-icon">🎓</div>
+        <p class="eyebrow">STUDENT SELF-EVALUATION</p>
+        <h1 id="subjectTitle">Loading subject...</h1>
+        <p class="subtitle" id="subjectMeta">Please wait...</p>
+      </div>
+
+      <div class="card">
+        <h2>Student Details</h2>
+        <div class="form-grid">
+          <label>
+            Student Name
+            <input id="studentName" type="text" placeholder="Enter your full name" autocomplete="name">
+          </label>
+          <label>
+            Roll Number
+            <input id="rollNo" type="text" placeholder="Enter your roll number">
+          </label>
+          <label>
+            Section
+            <select id="section">
+              <option value="">Select section</option>
+              <option>A</option><option>B</option><option>C</option><option>D</option>
+              <option>E</option><option>Other</option>
+            </select>
+          </label>
+        </div>
+        <button class="primary full" id="continueBtn">Continue <span>→</span></button>
+        <p class="privacy-note">Your responses are used for academic improvement.</p>
+      </div>
+    </section>
+
+    <!-- SCREEN 2 -->
+    <section id="screen-instructions" class="screen">
+      <div class="stepper"><span class="active">1</span><i></i><span class="active">2</span><i></i><span>3</span><i></i><span>4</span></div>
+      <div class="card">
+        <p class="eyebrow">BEFORE YOU BEGIN</p>
+        <div class="unit-banner">
+          <div class="unit-icon">📘</div>
+          <div>
+            <strong id="unitTitle">Unit</strong>
+            <small id="unitDescription"></small>
+          </div>
+        </div>
+
+        <h2>How to rate yourself</h2>
+        <div class="rating-guide">
+          <div class="guide one"><b>1</b><div><strong>Least Able</strong><small>I am not confident about this topic.</small></div></div>
+          <div class="guide two"><b>2</b><div><strong>Moderately Able</strong><small>I understand the basic concept.</small></div></div>
+          <div class="guide three"><b>3</b><div><strong>Strongly Able</strong><small>I can explain or apply the concept.</small></div></div>
+        </div>
+
+        <ul class="tips">
+          <li>There are no right or wrong answers.</li>
+          <li>Answer honestly based on your current understanding.</li>
+          <li>All questions must be answered before submission.</li>
+        </ul>
+
+        <button class="primary full" id="startBtn">Start Evaluation <span>→</span></button>
+      </div>
+    </section>
+
+    <!-- SCREEN 3 -->
+    <section id="screen-survey" class="screen">
+      <div class="survey-head">
+        <div>
+          <p class="eyebrow" id="surveyUnitLabel">UNIT 1</p>
+          <h1 id="surveyTitle">Unit title</h1>
+        </div>
+        <div class="progress-number" id="progressNumber">0%</div>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+      <div id="questionContainer"></div>
+
+      <div class="bottom-actions">
+        <button class="secondary" id="backToInstructions">← Back</button>
+        <button class="primary" id="reviewBtn">Review Answers →</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 4 -->
+    <section id="screen-review" class="screen">
+      <div class="card">
+        <p class="eyebrow">FINAL CHECK</p>
+        <h1>Review Your Answers</h1>
+        <div class="student-summary" id="reviewStudent"></div>
+        <div id="reviewContainer"></div>
+        <div class="warning">You cannot change your answers after final submission.</div>
+        <div class="bottom-actions">
+          <button class="secondary" id="editBtn">← Edit Answers</button>
+          <button class="primary" id="submitBtn">Submit Evaluation ✓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 5 -->
+    <section id="screen-success" class="screen">
+      <div class="success-card">
+        <div class="success-icon">✓</div>
+        <p class="eyebrow">SUBMISSION COMPLETE</p>
+        <h1>Thank You!</h1>
+        <p>Your evaluation has been submitted successfully.</p>
+        <div class="submission-id">
+          <small>Submission ID</small>
+          <strong id="submissionId"></strong>
+        </div>
+        <p class="muted">You may now close this page.</p>
+        <button class="primary" onclick="window.location.reload()">Go to Home</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>Reusable Student Self-Evaluation Portal</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin - Self Evaluation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">HCST</div>
+      <div>
+        <div class="college-name">Self-Evaluation Admin</div>
+        <div class="department">Manage subjects, units, questions and reports</div>
+      </div>
+    </div>
+    <a class="header-link" href="index.html">Student Portal →</a>
+  </header>
+
+  <main class="admin-container">
+    <div id="adminAlert" class="alert hidden"></div>
+
+    <div class="admin-grid">
+      <aside class="sidebar card">
+        <button class="nav-btn active" data-tab="dashboard">▦ Dashboard</button>
+        <button class="nav-btn" data-tab="subjects">▣ Subjects</button>
+        <button class="nav-btn" data-tab="units">◫ Units</button>
+        <button class="nav-btn" data-tab="questions">☷ Questions</button>
+        <button class="nav-btn" data-tab="responses">▤ Responses</button>
+        <button class="nav-btn" data-tab="reports">▥ Reports</button>
+      </aside>
+
+      <section class="admin-content">
+        <div id="tab-dashboard" class="admin-tab active">
+          <div class="page-heading">
+            <div><p class="eyebrow">ADMIN DASHBOARD</p><h1>Overview</h1></div>
+            <button class="secondary" id="refreshDashboard">↻ Refresh</button>
+          </div>
+          <div class="stats">
+            <div class="stat"><span>Students</span><strong id="statStudents">0</strong></div>
+            <div class="stat"><span>Responses</span><strong id="statResponses">0</strong></div>
+            <div class="stat"><span>Average</span><strong id="statAverage">0.00</strong></div>
+            <div class="stat"><span>Active Unit</span><strong id="statUnit">—</strong></div>
+          </div>
+          <div class="card">
+            <h2>Current Active Survey</h2>
+            <div id="activeSurveyBox" class="empty">No active survey.</div>
+          </div>
+        </div>
+
+        <div id="tab-subjects" class="admin-tab">
+          <div class="page-heading"><div><p class="eyebrow">SETUP</p><h1>Subjects</h1></div><button class="primary" id="addSubjectBtn">+ Add Subject</button></div>
+          <div class="card table-wrap"><table><thead><tr><th>Code</th><th>Subject</th><th>Semester</th><th>Session</th><th>Active</th><th></th></tr></thead><tbody id="subjectsTable"></tbody></table></div>
+        </div>
+
+        <div id="tab-units" class="admin-tab">
+          <div class="page-heading"><div><p class="eyebrow">SETUP</p><h1>Units</h1></div><button class="primary" id="addUnitBtn">+ Add Unit</button></div>
+          <div class="card table-wrap"><table><thead><tr><th>Subject</th><th>Unit</th><th>Title</th><th>Status</th><th></th></tr></thead><tbody id="unitsTable"></tbody></table></div>
+        </div>
+
+        <div id="tab-questions" class="admin-tab">
+          <div class="page-heading"><div><p class="eyebrow">QUESTION BANK</p><h1>Questions</h1></div><button class="primary" id="addQuestionBtn">+ Add Question</button></div>
+          <div class="card table-wrap"><table><thead><tr><th>Subject</th><th>Unit</th><th>CO</th><th>Question</th><th>Active</th><th></th></tr></thead><tbody id="questionsTable"></tbody></table></div>
+        </div>
+
+        <div id="tab-responses" class="admin-tab">
+          <div class="page-heading"><div><p class="eyebrow">DATA</p><h1>Responses</h1></div><button class="secondary" id="refreshResponses">↻ Refresh</button></div>
+          <div class="card table-wrap"><table><thead><tr><th>Time</th><th>Subject</th><th>Unit</th><th>Roll No</th><th>Student</th><th>Section</th><th>Average</th></tr></thead><tbody id="responsesTable"></tbody></table></div>
+        </div>
+
+        <div id="tab-reports" class="admin-tab">
+          <div class="page-heading"><div><p class="eyebrow">ANALYSIS</p><h1>Reports</h1></div><button class="secondary" id="refreshReports">↻ Refresh</button></div>
+          <div class="card">
+            <h2>Consolidated Student / Unit Averages</h2>
+            <div class="table-wrap"><table><thead id="reportHead"></thead><tbody id="reportBody"></tbody></table></div>
+          </div>
+          <div class="card">
+            <h2>CO-wise Averages</h2>
+            <div class="table-wrap"><table><thead><tr><th>Subject</th><th>CO</th><th>Average</th><th>Responses</th></tr></thead><tbody id="coReportBody"></tbody></table></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head"><h2 id="modalTitle">Add</h2><button id="modalClose" class="icon-btn">×</button></div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
